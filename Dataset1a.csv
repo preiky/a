@@ -1,0 +1,247 @@
+<!DOCTYPE html><html lang="en-us">
+
+<head>
+    <title>OSF | Sign in</title>
+    <meta charset="UTF-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /><link rel="stylesheet" type="text/css" href="/webjars/normalize.css/8.0.1/normalize.css" /><link rel="stylesheet" type="text/css" href="/webjars/bootstrap/4.5.0/css/bootstrap-grid.min.css" /><link rel="stylesheet" type="text/css" href="/webjars/material-components-web/4.0.0/dist/material-components-web.css" /><link rel="stylesheet" type="text/css" href="/webjars/mdi__font/5.0.45/css/materialdesignicons.css" /><link rel="stylesheet" type="text/css" href="/css/cas.css"/><link rel="icon" href="/favicon.ico" type="image/x-icon"/><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /></head>
+
+<body class="login mdc-typography">
+    <script type="text/javascript" src="/webjars/es5-shim/4.5.9/es5-shim.js"></script>
+<script type="text/javascript" src="/webjars/css-vars-ponyfill/2.3.1/dist/css-vars-ponyfill.min.js"></script>
+<script type="text/javascript" src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="/webjars/material-components-web/4.0.0/dist/material-components-web.js"></script>
+
+<script type="text/javascript" src="/js/cas.js"></script>
+
+<script>
+    resourceLoadedSuccessfully();
+    cssVars({});
+</script>
+
+<script>
+    /*<![CDATA[*/
+
+    var trackGeoLocation = false;
+
+    var googleAnalyticsTrackingId = null;
+
+    if (googleAnalyticsTrackingId != null && googleAnalyticsTrackingId != '') {
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', googleAnalyticsTrackingId, 'auto');
+        ga('send', 'pageview');
+    }
+
+    /*]]>*/
+</script>
+<div>
+
+        <header id="app-bar" class="mdc-top-app-bar mdc-top-app-bar--fixed mdc-elevation--z4">
+            <nav class="mdc-top-app-bar__row">
+
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-center">
+                    <span class="cas-brand mx-auto" >
+                        <img class="cas-logo" src="/images/osf-logo-white.png" alt="OSF logo"></span>
+                    <div class="cas-brand-text">
+                        <a class="navbar-link" href="https://osf.io/">
+                            <span class="cas-brand-name hidden-narrow" >OSF </span>
+                            <span class="cas-brand-name" >HOME</span>
+                        </a>
+                    </div>
+                </section>
+
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-center">
+                    <div class="form-button form-button-navbar">
+                        <a id="osfRegister" class="mdc-button mdc-button--raised button-osf-green" href="https://osf.io/register/">
+                            <span class="mdc-button__label">Sign up</span>
+                        </a>
+                    </div>
+                </section>
+
+            </nav>
+        </header>
+
+        <script type="text/javascript">
+            function disableSignUpButton() {
+                let signUpButton = document.getElementById("osfRegister");
+                if (signUpButton != null) {
+                    signUpButton.removeAttribute("href");
+                    signUpButton.style.opacity = "0.8";
+                    signUpButton.style.cursor = "not-allowed";
+                    signUpButton.style.backgroundColor = "#efefef";
+                    signUpButton.style.color = "#cccccc";
+                    signUpButton.style.visibility = "hidden";
+                }
+            }
+        </script>
+
+        <script type="text/javascript">
+            (function (material) {
+                var header = {
+                    init: function () {
+                        material.autoInit();
+                    },
+                    checkCaps: function (ev) {
+                        var s = String.fromCharCode(ev.which);
+                        if (s.toUpperCase() === s && s.toLowerCase() !== s && !ev.shiftKey) {
+                            ev.target.parentElement.classList.add('caps-on');
+                        } else {
+                            ev.target.parentElement.classList.remove('caps-on');
+                        }
+                    },
+                }
+                document.addEventListener('DOMContentLoaded', function () {
+                    header.init();
+                });
+            })(mdc);
+        </script>
+    </div>
+
+    <div class="mdc-drawer-scrim"></div>
+
+    <div class="mdc-drawer-app-content mdc-top-app-bar--fixed-adjust d-flex justify-content-center">
+        <main id="main-content" class="container-lg py-4">
+            <div id="content" class="d-flex justify-content-center">
+
+        <div class="d-flex justify-content-center flex-md-row flex-column mdc-card mdc-card-content w-lg-30">
+            <section id="loginForm" class="login-section login-form">
+                <div class="d-flex flex-column justify-content-between m-auto">
+
+            <section>
+                <div id="serviceui" class="mb-4 service-ui text-center">
+            <div>
+                <div class="osf-banner-without-name">
+                    <img id="serviceLogo" class="service-ui-logo" src="/images/osf-banner.png" alt="Service banner"/></div>
+                </div>
+        </div>
+            </section>
+
+            <section class="text-without-mdi text-center text-bold text-large margin-large-vertical">
+                <span>Sign in with your OSF account to continue</span>
+            </section>
+
+            <section class="form-button-inline">
+                <a class="mdc-button mdc-button--raised button-osf-grey" id="orcidlogin" href="clientredirect?client_name=orcid&amp;service=https%3A%2F%2Fosf.io%2Fdownload%2Fa2uey%2F&amp;locale=en">
+                    <img class="delegation-button-logo" src="/images/orcid-logo.png" alt="ORCiD logo"><span class="delegation-button-label">Sign in with ORCiD</span>
+                </a>
+                <a class="mdc-button mdc-button--raised button-osf-grey" id="instnLogin" href="/login?campaign=institution&amp;institutionId=&amp;service=https://osf.io/download/a2uey/">
+                    <img class="delegation-button-logo" src="/images/institution-logo.png" alt="Institution logo"><span class="delegation-button-label">Sign in via institution</span>
+                </a>
+            </section>
+
+            <section>
+                <hr class="hr-text" data-content="OR" /></section>
+
+            <div class="form-wrapper">
+
+                <form method="post" id="fm1" action="login">
+
+                    <section class="cas-field my-2=3">
+                        </section>
+
+                    <section class="cas-field cas-field-primary my-3">
+                        <div class="mdc-text-field  d-flex">
+                            <input class="mdc-text-field__input"
+                                id="username"
+                                size="25"
+                                type="text"
+                                accesskey="e"
+                                value=""
+                                autocomplete="off"
+                                autofocus name="username" /><label for="username" class="mdc-floating-label"><span class="accesskey">E</span>mail</label>
+                        </div>
+                    </section>
+
+                    <section class="cas-field cas-field-primary my-3 mdc-input-group">
+                        <div class="mdc-input-group-field mdc-input-group-field-append">
+                            <div class="mdc-text-field  mdc-text-field--with-trailing-icon d-flex caps-check">
+                                <input class="mdc-text-field__input pwd"
+                                    type="password"
+                                    id="password"
+                                    size="25"
+                                    accesskey="p"
+                                    autocomplete="current-password" name="password" value="" /><label for="password" class="mdc-floating-label"><span class="accesskey">P</span>assword</label>
+                            </div>
+                            <div class="mdc-text-field-helper-line caps-warn">
+                                <p class="mdc-text-field-helper-text mdc-text-field-helper-text--persistent mdc-text-field-helper-text--validation-msg text-danger">
+                                    <span >CAPSLOCK key is turned on!</span>
+                                </p>
+                            </div>
+                        </div>
+                        <button class="reveal-password mdc-button mdc-button--raised mdc-input-group-append" type="button">
+                            <i class="mdi mdi-eye reveal-password-icon"></i>
+                            <span class="sr-only">Toggle Password</span>
+                        </button>
+                    </section>
+
+                    <section class="cas-field">
+
+                        <input type="hidden" name="execution" value="b04223ef-e563-4bcd-ac04-6f8d6203e947_ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5Li1Ic0ZHWVgwQ0poLVJtNWxISG1iX056VmVEdUtpSHpVNEN5LTFFaVZwbmxjYlVNbjZhQU9lOVN0Uzd5ZENPMjZJRW9uQzVDalNlaUhGcTYtU1RoSVB0LUdJdGZPSDEwUThrLTBEV2xhbWFQWkhPb0pLS3EyM2lqZWhYVElxSVpIMWVVLW4yam9FaFNoTHhLUHFHSDZUWk9WNGRJWElURTVRUDJmT2xJWTFJc3B5MjNaMUF2UUVhTTNNTUp6Wm45bTkweXlqYXZidTNsaTFYUGtScUJaMDFYOVR6aFlBd2xFSDNpUmlzVDhzbHg0TFRfQW1VWERCbXhtbkpYLTZxSkM4Z01GLWVkSGgwU0xNU0NZaTZxU29lTjBYdXJjZ0ZwamdBWWpHYk1CS1F0NVNib1pMM3ExTC1PSlNBaEdWdXAyYWt3aGI1eVZ5MXEyaU16dHFEZGl4X3ozaUVRcXBtN0pZWGFHZzNQYUFEVWRaRkhmNEpUMTFlZnN5cTB6MTZoZFY1TGFjal9iT3JCY0VXMmFVRUt3bnFTSlZ0aW51b2pSSGJfdk9oSGcyM1AtWVJxVW9MRzRtZjNfbmtNeVF6ak5tZ0EzQUtXY2JYd1piZUJoNWNxd21USmtHOHVsMm5NX01nUUlsUDRMVVJaVmREQXZ1UFFOdWduSUFQVy1zc1Z0S0hTUE9mMXA0WTV1VUkyMXMzbWFIU0Nsd3lOX2hiS2hsRGtKeTZWMng3TERBXzJ1UjVwelBEU3V2dFlzNXowVHJMY050MFpiZEFFTDRzM29sUEloTkNTOE9ZcDhpN0E3NjYyV3haNDliREtnTDhwT3oxZ2hodmhJdTJNLV9rbTV6eW1wNzVjZEtPRWd0a1k1QTBwU3E4TjJjc0k4d2p6SlVSM0FpMkNQcFczZk00RGhITVYyMzFucHV2WVpjU05tLXdJdkdWU05YSFB3ZTZoMTk0VEtzRnRrNTFWcVRvVmhXUDczeE51eTFaWXNhN3BWNHlVWkJkVEVvdG1YQXp0SGR0eVlWdTlILWh0NThNMDZyNjJweWhCMkRacDRvSE8zVEZYMThwaGRqamZrMm92RDNwMkV3MnUzZzhoVG1jWHg5U2lGNDZXRm5pV0lyamNvcFZsX3lGSTduTE9VRmIyem5yMjlPNWtZakFoaTVVaExRQ2FmWGF4U2xlUHNhMzl3blQ4QmM1cGNlbVhpeTYweDhkSVUzMldzdWJ6MURwX0czWVl1NHVRd3pIX0xoZzlRRmItWnV3bExaMzRfUW4wYnpxczJPQ2RJd2JlNnFNM3hBN2tObXFSOG1UOFRiWURaOE5nak1XQTc5SlZyYVU0QjVVNG14YzlWT1pYUHh5OTN1MnNCVE5EUXlQS2dFRVJKV1dTV0VMbGtIUzRJZnRDVmVrcE5malpZYjJNbHFPZkk2Vm1odXhDQXBvaFpSaXdKVlFhZUcyUExWcGloQ2NXTDV1NHhDQUx6MUp1N3hoSFJHa3FseU5aQWRJZ0JNSnJEbmlqRi1vbU1ZdTdhWkI2cTdpSk1QQlhDZW9HclJ5TFVCOEtPTVQwY3B4cGQ4Y2tnNkpKdHlxbVlPbEhGdGhWQTNnLVdGeTdubVlNQU1ELTJFRUFsSGVMVHYxWHBmSnlFYTFjRlFHbnczNXJVYm5xNmt0NHVGRkpNNzhsLWVGQ3dOZEFkY1ZISDJvWkQ1Q2Nnbkk2WjlwOVVWS2FkbUJlQlBSMVFVRGVoM291eWdLOEpjTlY4U3l2MFpfNWM1Z3pWYVd4NHNYZGlKN3RHUldXdk81eG5FZlZYck9sWXhzdmlmaVRqWUkwODZhOG10TXNzd25pTk5hZzd6TW8zalQxaHFmMDN0X1I4ZzlnTm9uUUkyQkw2MVBEbWxpemRTS1pqT3lkRG8tUm9TdV9CUG14QmtYOUVPLWV4ZDZVMlN4WGkzQkR1LWxlMU0tTnpqRlViZXpOcksxQi1tVVFPM2RzV1NiS1YzMWVLbEJLY1FwaXRQLWRuaVBHRUhRTTF6emxKRWw2QU01akpCRWQzWTJsT3VHbUZ3M2h4NjRRX0FxYndBeTl6UVUyLWhrY2FHd1EtX1lYaWpqU1hVeVdYQ2xWZXd0ZXRrcnlVa050c1k0T01aU2cyeFhndFVhc2RYUk1lOEVoT3UzLTRNTHFxUUlZSnJjMDFBSFFJY1gteDZEeF9uOF9PSU11djV6b3NBTHFybXg1aDluMy1fRlFFdWd3V2V0c21SeXJ3WkRNcHBPMzVKMTlETHcxM2J1eVdCZFhsVEQ2aXdPTThtYXJmT1ZNczJzbzVmYXZtUGhBa25sQzliUDhVZnZtX1JKRWxiRjBCcFpKY0JGak56SkxxWEJQdjZsSG9ncmNYSlg1bVF6R2FURU1CUFhjb0RpNTI0V1U1TFUwZmY2dHpYRmFkV2NvMWIzNnc0aklFdkVycDRYVHU3Yi1KTmtNS283VU5xdFprXzBvVkxOZGd3Q1BwZEhQMzQyblJDNHFMY1UwSXJ2cDhiM1VkZm5NeTRqY0V3eVlsNmVTT3NRRTJUZWMzMEVIb3ZXTkhLQnNyZl80dWZaazVUV3lXRDhQSmxhQTR3bVNfN2htVjJhS1ZKZWtyaVRhVW5WYVJPZThKSlBiMVRqekxjYk90NzJNbDJnZmZncWRBWk90bTF2di1Qem1BUG1xSWxOY3ZVNWctdlJOa3NqemhLdG1RZG44NHVyTWZTWkg2OV84WE9MdHFxX2gzenFJNG5qM1hBNlp1YWJWUmY4aGIwZFZ5XzIzZERGemtwdmdULW9pVEwxRGR3ZFNxYVJKbkRqNjNYMThJS0t5RHJzZGVQZzlGSEZNaWRyWmJ6eC1WR1NmTVItb0d6T094WThyVDRpT3BjRUlhRl9iMkhpSUp3bkRVTTNHbDQ1VERJZGpYMFRKOGtuaDhQZEEza00zRHlNUHVwVGxfUU5WTE1FR1V0RmRLZmNmTERJOEc2bVVRSGlhcTRPZ2tITm5jMDVWU2pxaE9YbHNyeWpJNFlERjh1TGd4YjJBLXdSU05IOElFaFJQbkRaUHFJbU5GTWEyM3FUNlhRWmJ1UVhZaW95SGtBZEJmTzI1NlJmRERFTzUwQ2RTSXR2cTBlUDViT3J3dTNmak9teVloTU1kU0twbnloT0hHOTkyVE03dHpBcTgwRnhZbDBHd2xDVXpxejJGRHV1dm1pVE4wS0t1bTBqMnB3OC1tVnkyb1JtNkNXVE5NUjc1MzFCcUpyNURMaFVPR3dVNkloX2FvY09HaEhPMTB0RVFrdVZsek56UTlzQTlwdjI0Z1pmUm1ZZEhYc3RTSzRrVjZTUDRZY1ZKazJQR19DaWZXZE8xWXltSks5azN2UXVTVGUtYkk5UXZ2VHVSQm5XNmFBalZQTjN0Q1puWE9ZZ0tjUjdmbEhiclFKNXk0aWtZZzJPX1NiTkljLVlxZzZTM0tZbW9pZzRjSEJiX1g1TGZVQnczQmxTaEc3OWRPMnZqdVhDcDJ5MTFTRmxMSDliYWlaZzFVRmZRNmRNMzlGWVhLLUtPZTNCd29DRmdyal9DRDhlWlZGYnNyQ2Y2Y2RNN2lpcHhyMWJFZlVSS3g0amJXR1N5bDczUDR1NFlNZml1Z2pDTlRLV2NxMWFQVmRJVjVpZ2lEaGRzNWZOdVNBZm1NLTdZOEZNcmZ6ZV9xX3JFcmJqeFlBSUZDX19DU0padHVSMUpBdTh3NXZQcDFna2p0YTRZSHg3TmE0aHFwUUhjQ2gza25teXVURDVkWjlpbUdoLWNHN2MyNWpkMlJGUFpZNmxJeXZLS2J1VHpsb2VHMEtNdjJEeGxRRnpLajF1cG1Mbl8xeGJzZ3Mza21ib0w1M0UtaDdudHRoMHdUVUdXZTc2Z051TGx5MUc0NmM0UDRQek13S1lFYS1ZbnZVUHE5YU0xVERMNTRnZWdVV2dOSEFGNUhwYnctNkpSbFBpNXVQNjZIVFhyN200QU85Y1oxeHBNWFg5YV9fdlNZZXZrVXRDN2ZBU1dlY1ZBWHV6d0l1VmM1bmpwNmRHNkw5b3JzekNEREhjWEZfNEhDeC1udmktMEdYTHNaRUlVNFZNQ3MtM3Y0NGxWRVBtV0p3TDk2dkJVdk43dWh4NG9QWVl1WGpVQm51akluWUpjeHVJemJtamh2aUh3NllDZFJPcjhRNGIzSm1wdFd1RlZEeDVRUXZQZTVuV0hDWFdfb0NWT0dNeEZGcVFDU1pyNElibTNiX1padHllbm1zR25STUxsTnNwaWFVbWE3aDQtS21EZmlWVURnNmNKX0g4a215V1J1U0VIUFFPUElQaGlrT044NVdnYWdOYm4xYUNGX0VmakhSQVdqd2dLNDNMbkp3c2k1V2FVbU5vUjNmWEZrUy1ERjNCdTN1aGdqc0NGSExYcFhSQmtHM2NYc0hESlE1ZmEyZWQtdHZUTUJjaFAxcE85clVjbmdNR2xhQlhOX1BobHM1OTVPdHoxT09uZ3BlaTltNTZsMXkxU1ktRnRXOUtjaHhnWDE1Ny1YNmstYmNVYXpoZEhfU2lHV3hBMkNESVpyOEZwcTVfWXhLa2MxeGtzd08wMVFxYnh0OF9ja2R1TVk0RlNxaFZqR0NWOVhFMUo0SzB1N3pZMjdOLU5oNURKWThDYnZodU13bjdBMGItYy1PQmN5d0FvRHVVQlJwc0xrRTJvZDVHRG1fVHlZNWJhbU5WMWVlODNldjZCa0Y2WGZZZG9BZDRkWFU1ZHR1aXFMZERJektwV01mYTg3YXk3MXZsNTlsQ0NnV2pPMTR1Tm80Yl9Sc3ZOQmZhM2R5alpJRHBEZVNrTVhHc1BaT0dEMWljdnFWVGQtN2JaWThqRjZ3dG83X2xORzVPSHRoRnNfZHpSdGtRT1pDX1lxYl9TWmdYWUsya0tSc0lhUFQ1bGZnNUxQVkNMLVBOdVBxOFI0NUlTYjFlLWc5bVhPYkJtcDhBcnNhUUNablk3alZGUHdoalBreHlGWXdiSjJhZFBDSjlITW82OXBxRndEa3VkWmFGT2xUUkdfSFFrdU5YYi1rQUM3djV1ZW9rSWQwSWxMRXpvYXhPRXJkQjVYOHJzOVdueS1MYnNFWk9pMjhWdVpSLVdEYUhFZTdVLVlEMGNWT01hcGpJc2wyYnUyWFZQLU5Jck9qNktvMlA2UlJLU0dVTVpKZlpQYzdXMTVfZURUMUg1ajlTaW11Yl9GTlZhLW56clZxeWtNUkhTT3owYjZJb0RQNTB0cFR1TW1WazlmZThkOE9JX1Q1eER0cWpWVU5QMXpmTUcxY1p6WTF6NDh4dm1ibnZLN2xZTXdQZExhUlhqaDhNZHZ5UUc4b1lFeUhZVjVkUFY5dVBtN1lEcEtab2R6QnpPUkQwTkhmZWk3LTFGZ2EzWDRPTFVDcGhXS1J0NmhYdkNLVDNYX2RKV1M3VWl6R3dhbFZUU1RicmZ2YkJ2ZkdMTjBvb0ltdW91Y1p4eGZCMUZoN1hCTG1mMHQ5R29CRVF2ZkI3c0RIZWgzaWR0R1FvU2VXOHhiaktIN3o4eUU3Uk13TWd1cUhBLUNrd0RsaU1TZUtrdTMweWF2eVU5VEEzSkx2WUdVSnFaSkZBSnRZS2pVOS1VSWNvRjJidmR0c3VoS0RpQ1ctZW5fSnpHTEctSWNQbFZwVUVDMVhJT1lHZ1cxWXFZRWdZc291LUttMVFxZnFiM2tLMEg2eHNvTzFMOHZ5NjgtSi1KMHVCekt3REhmNDlVY3VGdElibmRia2RMN2dSTmFUaDFwYzdRSDBGOUUzb0dvaF9NTlFub1lMRS03c3NULTU1cFFLbDQ1WFZxdVJ2RXRUdDBLUGsyZUxHNEFHdW9OUUNnRjNaZW9hdXp0N1plSWtrN3pISUt4VTV6LTRrMmNDMFBZVVpFTUxIR2R3M183eTV1VTFMdW1PVFFKWE15RWJXZFphMVNOMXlvMGR6N04zR21mTVhPajl6Vm9WN3VpZ1dXSDJud0kuWWFqN1FHRktaRTRwWmFFdmVJODNOdTE4eHo1UThjM0Q3MTQ1WEYwaVllWDJGZXZuTEhDTXJJbldVS3R5LWZmSUpSNUYxc2tHVDdaVFBMNHJ2QlJqUGc="/><input type="hidden" name="_eventId" value="submit"/><input type="hidden" name="geolocation"/></section>
+
+                    <section>
+                        <div class="form-button">
+            <button
+                    class="mdc-button mdc-button--raised button-osf-blue"
+                    name="submit"
+                    accesskey="l"
+                    type="submit">
+                <span class="mdc-button__label">Sign in</span>
+            </button>
+            </div>
+                    </section>
+
+                    <section class="cas-field cas-field-primary cas-field-col-2">
+                        <span class="cas-field-float-left">
+                            <input type="checkbox" name="rememberMe" id="rememberMe" value="true"/>&nbsp;
+                            <label for="rememberMe">Stay signed in</label>
+                        </span>
+                        <span class="cas-field-float-right">
+                            <a href="https://osf.io/forgotpassword/">Reset password</a>
+                            <br><a href="https://help.osf.io/hc/en-us/articles/360019737194-Sign-in-to-OSF">Need help signing in?</a>
+                        </span>
+                    </section>
+
+                </form>
+
+                <script type="text/javascript">
+                    /*<![CDATA[*/
+                        var i = "One moment please ...";
+                        var j = "Sign in";
+                    /*]]>*/
+                    $(window).on('pageshow', function () {
+                        $(':submit').prop('disabled', false);
+                        $(':submit').attr('value', j);
+                    });
+                    $(document).ready(function () {
+                        $("#fm1").submit(function () {
+                            $(":submit").attr("disabled", true);
+                            $(":submit").attr("value", i);
+                            return true;
+                        });
+                    });
+                </script>
+
+            </div>
+        </div>
+            </section>
+        </div>
+    </div>
+        </main>
+    </div>
+
+    <footer class="py-4 d-flex justify-content-center cas-footer cas-footer-osf">
+    <span id="copyright-2"
+          class="mr-2 d-inline-block copyright"><span style="white-space: nowrap">Copyright &copy; 2011 &ndash; 2022</span>&#160;<a style="white-space: nowrap" href="https://cos.io">Center for Open Science</a> &#124;&#160;<a style="white-space: nowrap" href="https://github.com/CenterForOpenScience/centerforopenscience.org/blob/master/TERMS_OF_USE.md">Terms of Use</a>&#160;&#124;&#160;<a style="white-space: nowrap" href="https://github.com/CenterForOpenScience/centerforopenscience.org/blob/master/PRIVACY_POLICY.md">Privacy Policy</a>&#160;&#124;&#160;<a style="white-space: nowrap" href="https://status.cos.io/">Status</a></span>
+</footer>
+</body>
+
+</html>
